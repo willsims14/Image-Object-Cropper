@@ -73,13 +73,13 @@ def show_original_and_cropped_jpeg(original, dpi, vertical_max, vertical_min, ho
     ax = fig.add_subplot(1, 2, 2)
     # ax.patch.set_facecolor('grey') # Uncomment this line to change the background color of plot to gray
     ax.set_title("Cropped")
-    ax.set_ylabel("{} inches ".format(float(cropped_image.shape[0]) / dpi, cropped_image.shape[0]))
-    ax.set_xlabel("{} inches ".format(float(cropped_image.shape[1]) / dpi, cropped_image.shape[1]))
+    ax.set_ylabel("{} inches ".format(round(float(cropped_image.shape[0] / dpi), 4)))
+    ax.set_xlabel("{} inches ".format(round(float(cropped_image.shape[1] / dpi), 4)))
     silence_all_axis_ticks(plt)
     plt.imshow(cropped_image)
 
-    original_area_dimensions_text = 'Original Size: {}w x {}h'.format(str(original.shape[0] / dpi), str(original.shape[1] / dpi))
-    area_used_dimensions_text = 'Cropped Size: {}w x {}h'.format(str(cropped_image.shape[0] / dpi), str(cropped_image.shape[1] / dpi))
+    original_area_dimensions_text = 'Original Size: {}w x {}h'.format(str(original.shape[0] / float(dpi)), str(original.shape[1] / float(dpi)))
+    area_used_dimensions_text = 'Cropped Size: {}w x {}h'.format(str(round(cropped_image.shape[0] / float(dpi), 4)), str(round(cropped_image.shape[1] / float(dpi), 4)))
     plt.suptitle('PNG Images\n\n{}\n{}'.format(original_area_dimensions_text, area_used_dimensions_text))
 
     # Show Plot
