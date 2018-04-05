@@ -1,5 +1,9 @@
 # PNG Image Object Cropper
 
 
-# About
+## About
 This script was built to crop PNG images based on the objects within the image. It works well for logos and emblems. Users can change the DPI that is used to calculate the image size in Inches.
+
+
+## Examples
+![Example 1](https://github.com/willsims14/Image-Object-Cropper/blob/master/images/examples/believeland_example.png)
